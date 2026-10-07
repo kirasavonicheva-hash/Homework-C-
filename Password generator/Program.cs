@@ -69,11 +69,11 @@ class PasswordApp
 
     public string GetStrengthText(double bits)
     {
-        if (bits < 28) return "очень слабый";
-        if (bits < 36) return "слабый";
-        if (bits < 60) return "средний";
-        if (bits < 128) return "сильный";
-        return "очень сильный";
+        if (bits < 28) return "Мега слабый(((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((";
+        if (bits < 36) return "нн крч";
+        if (bits < 60) return "Моггает нн";
+        if (bits < 128) return "Моггает (Моггает нн)";
+        return "Сильно брот";
     }
 
     public double GetCrackTimeSeconds(string password, double speed = 10_000_000_000.0)
@@ -221,12 +221,12 @@ class PasswordApp
 
     public void CheckPasswordMenu()
     {
-        Console.Write("Введите пароль: ");
+        Console.Write("Введите пароль:");
         string password = Console.ReadLine();
 
         if (IsInDictionary(password))
         {
-            Console.WriteLine("Пароль найден в словаре популярных паролей — подбирается мгновенно!");
+            Console.WriteLine("Пароль найден в словаре популярных паролей................................................................");
             return;
         }
 
@@ -235,7 +235,7 @@ class PasswordApp
 
         if (IsSimplePattern(password))
         {
-            Console.WriteLine("Обнаружен простой шаблон — оценка понижена.");
+            Console.WriteLine("Обнаружен простой шаблон, самооценка понижена.");
             text = "слабый (шаблон)";
         }
 
